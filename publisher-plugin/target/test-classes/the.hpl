@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven
+Built-By: anil.subudhi
+Build-Jdk: 1.6.0_27
+Group-Id: org.publisher.plugin
+Short-Name: publisher-plugin
+Long-Name: Property Plugin
+Url: http://hudson-ci.org/hudson-plugin-parent/publisher-plugin/
+Plugin-Version: 1.0-SNAPSHOT (private-02/23/2014 23:34-anil.subudhi)
+Hudson-Version: 3.0.0
+Plugin-Developers: 
+Libraries: /home/anil.subudhi/JenkinPlugin/publisher-plugin/target/cla
+ sses
+Resource-Path: /home/anil.subudhi/JenkinPlugin/publisher-plugin/src/ma
+ in/webapp
+
