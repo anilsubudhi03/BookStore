@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- set debug to true ,to debug the log4j configurations -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- APPENDERS LIST -->
+	<!-- show log entries on console -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%5p] [%c{1}:%L] [%t] - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- log all logs to a separate log file every day -->
+	<appender name="orgDevelopersLogFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
++		<param name="file" value="../FieldForceAutomation/logs/Framework.log" />
+		<param name="datePattern" value="'.'yyyy-MM-dd" />
+		<!-- <param name="append" value="true" /> -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %C{6} (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- LOGGER LIST -->
+	<!-- log all classes in org.developers package -->
+	<logger name="com.act.device">
+		<level value="INFO" />
+		<appender-ref ref="orgDevelopersLogFileAppender" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+
+	<category name="org.jboss.remoting">
+		<priority value="TRACE"></priority>
+	</category>
+
+	<category name="org.apache.fop">
+		<priority value="INFO"></priority>
+	</category>
+	<category name="org.milyn">
+		<priority value="INFO"></priority>
+	</category>
+	<category name="org.apache.xmlgraphics">
+		<priority value="INFO"></priority>
+	</category>
+
+
+
+	<root>
+		<priority value="INFO" />
+		<!-- log all log entries on console -->
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="orgDevelopersLogFileAppender" />
+	</root>
+</log4j:configuration>
